@@ -14,11 +14,20 @@
   <link rel="canonical" href="https://asyalapa.github.io/nails-landing/">
 
   <title>Татьяна | Мастер маникюра и педикюра. Студия “Ноготки принцессы”</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="./images/manicure-svgrepo-com.svg" type="image/svg+xml">
 
-  <!-- Google Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <!-- Preconnect для Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Предзагрузка критического CSS -->
+  <link rel="preload" href="style.css" as="style">
+
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts с display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
 </head>
 
 <body class="page">
@@ -66,7 +75,7 @@
         <div class="mobile-menu__profile">
           <!-- Schema.org разметка для мастера -->
           <div itemscope itemtype="https://schema.org/Person">
-            <img src="./images/tatiana.png" alt="Фотография Татьяны, мастера маникюра" class="mobile-menu__avatar"
+            <img src="./images/tatiana.webp" alt="Фотография Татьяны, мастера маникюра" class="mobile-menu__avatar"
               itemprop="image">
             <p class="mobile-menu__name" itemprop="name">Татьяна</p>
             <p class="mobile-menu__title" itemprop="jobTitle">Мастер маникюра</p>
@@ -104,7 +113,7 @@
 
     <!-- ADVANTAGES -->
     <section class="advantage-list container" aria-label="Преимущества">
-      <h2 class="section-title">Преимущества</h2>
+      <h2 class="section-title" style="display: none;">Преимущества</h2>
       <div class="advantage-card">
         <h3 class="advantage-card__title">10+ лет опыта</h3>
         <p class="advantage-card__text">Работаю с любыми типами ногтей</p>
@@ -123,8 +132,8 @@
     <section id="services" class="services-section container" itemscope itemtype="https://schema.org/OfferCatalog">
       <h2 class="section-title">Услуги и цены</h2>
 
-      <div class="service-list">
-        <div class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+      <ul class="service-list">
+        <li class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
           <div class="service-card__info">
             <h3 class="service-card__title" itemprop="name">Классический маникюр</h3>
             <p class="service-card__description" itemprop="description">Уход, обработка и идеальная форма</p>
@@ -135,9 +144,9 @@
             <button class="button service-card__button"
               aria-label="Записаться на классический маникюр">Записаться</button>
           </div>
-        </div>
+        </li>
 
-        <div class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+        <li class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
           <div class="service-card__info">
             <h3 class="service-card__title" itemprop="name">Гель-лак</h3>
             <p class="service-card__description" itemprop="description">Стойкое покрытие до 4 недель</p>
@@ -147,9 +156,9 @@
             <meta itemprop="priceCurrency" content="RUB">
             <button class="button service-card__button" aria-label="Записаться на гель-лак">Записаться</button>
           </div>
-        </div>
+        </li>
 
-        <div class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+        <li class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
           <div class="service-card__info">
             <h3 class="service-card__title" itemprop="name">Наращивание</h3>
             <p class="service-card__description" itemprop="description">Идеальная длина и архитектура</p>
@@ -159,8 +168,8 @@
             <meta itemprop="priceCurrency" content="RUB">
             <button class="button service-card__button" aria-label="Записаться на наращивание">Записаться</button>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
 
       <div class="promo-banner" role="note">
         <span class="promo-banner__badge">🎁 Специальное предложение</span>
@@ -173,17 +182,17 @@
       <h2 class="section-title">Мои работы</h2>
       <div class="gallery">
         <!-- Подробные alt для SEO/Accessibility -->
-        <div class="gallery__item"><img class="gallery__image" src="./images/nail-02.png"
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-02.webp"
             alt="Пример маникюра: нежный френч с розовым покрытием" loading="lazy"></div>
-        <div class="gallery__item"><img class="gallery__image" src="./images/nail-03.png"
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-03.webp"
             alt="Пример маникюра: матовый дизайн с блестками" loading="lazy"></div>
-        <div class="gallery__item"><img class="gallery__image" src="./images/nail-04.png"
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-04.webp"
             alt="Пример маникюра: красный гель-лак, глянцевый финиш" loading="lazy"></div>
-        <div class="gallery__item"><img class="gallery__image" src="./images/nail-05.png"
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-05.webp"
             alt="Пример маникюра: дизайн с геометрическими линиями" loading="lazy"></div>
-        <div class="gallery__item"><img class="gallery__image" src="./images/nail-06.png"
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-06.webp"
             alt="Пример маникюра: нюдовое покрытие и кошачий глаз" loading="lazy"></div>
-        <div class="gallery__item"><img class="gallery__image" src="./images/nail-01.png"
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-01.webp"
             alt="Пример маникюра: однотонное фиолетовое покрытие" loading="lazy"></div>
       </div>
     </section>
@@ -197,7 +206,7 @@
 
     <!-- ABOUT (Микроразметка) -->
     <section id="about" class="about-section container" itemscope itemtype="https://schema.org/Person">
-      <img class="about-section__image" src="./images/tatiana.png" alt="Татьяна, мастер маникюра" itemprop="image">
+      <img class="about-section__image" src="./images/tatiana.webp" alt="Татьяна, мастер маникюра" itemprop="image">
       <div class="about-section__content">
         <h2 class="section-title about-section__title">Татьяна <span itemprop="name">Эксперт нейл-индустрии</span></h2>
         <p class="about-section__text" itemprop="description">Я — Татьяна, мастер маникюра с более чем 10-летним опытом.
@@ -212,7 +221,7 @@
       <div class="review-list">
         <div class="review-card" itemscope itemtype="https://schema.org/Review">
           <div class="review-card__header">
-            <img class="review-card__avatar" src="./images/comment-01.png" alt="Аватар Анны">
+            <img class="review-card__avatar" src="./images/comment-01.webp" alt="Аватар Анны">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Анна</b>
               <div class="review-card__stars">★★★★★</div>
@@ -225,7 +234,7 @@
 
         <div class="review-card" itemscope itemtype="https://schema.org/Review">
           <div class="review-card__header">
-            <img class="review-card__avatar" src="./images/comment-02.png" alt="Аватар Марии">
+            <img class="review-card__avatar" src="./images/comment-02.webp" alt="Аватар Марии">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Мария</b>
               <div class="review-card__stars">★★★★★</div>
@@ -238,7 +247,7 @@
 
         <div class="review-card" itemscope itemtype="https://schema.org/Review">
           <div class="review-card__header">
-            <img class="review-card__avatar" src="./images/comment-03.png" alt="Аватар Екатерины">
+            <img class="review-card__avatar" src="./images/comment-03.webp" alt="Аватар Екатерины">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Екатерина</b>
               <div class="review-card__stars">★★★★★</div>
@@ -320,8 +329,9 @@
           </ul>
         </div>
         <div class="contacts-map">
-          <iframe class="contacts-map__iframe" title="Карта проезда к студии в Москве"
-            src="https://maps.google.com/maps?q=Moscow&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+          <iframe class="contacts-map__iframe"
+            src="https://maps.google.com/maps?q=Moscow&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            title="Карта проезда к студии" loading="lazy" height="300"></iframe>
         </div>
       </div>
     </section>

@@ -454,7 +454,7 @@ body.dark .mobile-menu__container {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/front-img.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/front-img.webp');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -982,6 +982,11 @@ body.dark .custom-select__option:hover {
 
 .social-links__link:hover {
   color: var(--accent);
+}
+
+.contacts-map__container {
+  position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .contacts-map__iframe {
