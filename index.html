@@ -36,7 +36,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="container header__container">
-      <div class="header__logo" aria-label="Ноготки принцессы, студия маникюра">Ноготки принцессы</div>
+      <div class="header__logo">Ноготки принцессы</div>
 
       <!-- ДЕСКТОПНАЯ НАВИГАЦИЯ -->
       <nav class="header__nav nav" aria-label="Основное меню">
@@ -104,6 +104,7 @@
 
     <!-- ADVANTAGES -->
     <section class="advantage-list container" aria-label="Преимущества">
+      <h2 class="section-title">Преимущества</h2>
       <div class="advantage-card">
         <h3 class="advantage-card__title">10+ лет опыта</h3>
         <p class="advantage-card__text">Работаю с любыми типами ногтей</p>
@@ -191,7 +192,7 @@
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Увеличенное изображение"
       aria-hidden="true">
       <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">✕</button>
-      <img class="lightbox__image" id="lightbox-img" alt="">
+      <!-- img создаётся динамически -->
     </div>
 
     <!-- ABOUT (Микроразметка) -->
@@ -214,7 +215,7 @@
             <img class="review-card__avatar" src="./images/comment-01.png" alt="Аватар Анны">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Анна</b>
-              <div class="review-card__stars" aria-label="5 из 5 звезд">★★★★★</div>
+              <div class="review-card__stars">★★★★★</div>
             </div>
           </div>
           <p class="review-card__text" itemprop="reviewBody">Лучший мастер! Маникюр держится идеально уже больше 3
@@ -227,7 +228,7 @@
             <img class="review-card__avatar" src="./images/comment-02.png" alt="Аватар Марии">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Мария</b>
-              <div class="review-card__stars" aria-label="5 из 5 звезд">★★★★★</div>
+              <div class="review-card__stars">★★★★★</div>
             </div>
           </div>
           <p class="review-card__text" itemprop="reviewBody">Всегда уютная атмосфера и внимание к деталям. Хожу только к
@@ -240,7 +241,7 @@
             <img class="review-card__avatar" src="./images/comment-03.png" alt="Аватар Екатерины">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Екатерина</b>
-              <div class="review-card__stars" aria-label="5 из 5 звезд">★★★★★</div>
+              <div class="review-card__stars">★★★★★</div>
             </div>
           </div>
           <p class="review-card__text" itemprop="reviewBody">Долго искала “своего” мастера и наконец нашла. Всё идеально
@@ -255,18 +256,17 @@
       <h2 class="section-title">Записаться на прием</h2>
       <form id="formEl" class="appointment-form" action="#" method="POST">
         <div class="appointment-form__group">
-          <input class="appointment-form__input" type="text" id="name" name="name" required aria-required="true">
+          <input class="appointment-form__input" type="text" id="name" name="name" required>
           <label class="appointment-form__label" for="name">Ваше имя</label>
         </div>
 
         <div class="appointment-form__group">
-          <input class="appointment-form__input" type="tel" id="phone" name="phone" required maxlength="18"
-            aria-required="true">
+          <input class="appointment-form__input" type="tel" id="phone" name="phone" required maxlength="18">
           <label class="appointment-form__label" for="phone">Телефон</label>
         </div>
 
         <div class="appointment-form__group">
-          <select class="appointment-form__select" id="service" name="service" required aria-required="true">
+          <select class="appointment-form__select" id="service" name="service" required>
             <option value="" disabled selected>Выберите услугу</option>
             <option>Классический маникюр</option>
             <option>Гель-лак</option>
@@ -307,11 +307,17 @@
               aria-label="Позвонить по номеру +7 999 999 99 99">+7 999 999 99 99</a></p>
           <p class="contacts-info__item">✉️ <a class="contacts-info__link" href="mailto:info@nails.ru"
               aria-label="Написать письмо">info@nails.ru</a></p>
-          <div class="social-links" aria-label="Социальные сети">
-            <a class="social-links__item" href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
-            <a class="social-links__item" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a class="social-links__item" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-          </div>
+          <ul class="social-links" aria-label="Социальные сети">
+            <li class="social-links__item">
+              <a class="social-links__link" href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </li>
+            <li class="social-links__item">
+              <a class="social-links__link" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </li>
+            <li class="social-links__item">
+              <a class="social-links__link" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </li>
+          </ul>
         </div>
         <div class="contacts-map">
           <iframe class="contacts-map__iframe" title="Карта проезда к студии в Москве"

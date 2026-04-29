@@ -391,29 +391,49 @@ const GalleryManager = (() => {
    */
   const openLightbox = (element) => {
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
 
-    if (!lightbox || !lightboxImg) return;
+    if (!lightbox) return;
 
     const img = element.querySelector('img');
     if (!img) return;
 
+    // Удаляем старую картинку, если есть
+    const oldImg = lightbox.querySelector('.lightbox__image');
+    if (oldImg) oldImg.remove();
+
+    // Создаём новую картинку
+    const lightboxImg = document.createElement('img');
+    lightboxImg.className = 'lightbox__image';
+    lightboxImg.id = 'lightbox-img';
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
+
+    // Вставляем перед кнопкой закрытия или просто добавляем
+    const closeBtn = lightbox.querySelector('.lightbox__close');
+    if (closeBtn) {
+      lightbox.insertBefore(lightboxImg, closeBtn);
+    } else {
+      lightbox.appendChild(lightboxImg);
+    }
+
     lightbox.style.display = 'flex';
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
 
-  /**
-   * Закрывает лайтбокс
-   */
   const closeLightbox = () => {
     const lightbox = document.getElementById('lightbox');
     if (lightbox) {
       lightbox.style.display = 'none';
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+
+      // Очищаем src у картинки (опционально)
+      const img = lightbox.querySelector('.lightbox__image');
+      if (img) {
+        img.src = '';
+        img.alt = '';
+      }
     }
   };
 

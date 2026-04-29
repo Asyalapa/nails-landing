@@ -965,15 +965,23 @@ body.dark .custom-select__option:hover {
 
 .social-links {
   display: flex;
-  gap: 20px;
-  margin-top: 25px;
-  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.social-links__item {
+.social-links__link {
+  text-decoration: none;
+  color: inherit;
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-links__link:hover {
+  color: var(--accent);
 }
 
 .contacts-map__iframe {
