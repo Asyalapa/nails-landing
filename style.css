@@ -516,6 +516,7 @@ body.dark .mobile-menu__container {
   display: flex;
   gap: 25px;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 .service-card {
@@ -649,6 +650,7 @@ body.dark .mobile-menu__container {
   min-width: 250px;
   border-radius: var(--border-radius-card);
   box-shadow: var(--shadow);
+  object-fit: cover;
   width: 100%;
 }
 

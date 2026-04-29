@@ -26,8 +26,12 @@
   <!-- Основной CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Fonts с display=swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <!-- Загружаем шрифты без блокировки -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  </noscript>
 </head>
 
 <body class="page">
@@ -76,7 +80,7 @@
           <!-- Schema.org разметка для мастера -->
           <div itemscope itemtype="https://schema.org/Person">
             <img src="./images/tatiana.webp" alt="Фотография Татьяны, мастера маникюра" class="mobile-menu__avatar"
-              itemprop="image">
+              itemprop="image" width="100" height="100">
             <p class="mobile-menu__name" itemprop="name">Татьяна</p>
             <p class="mobile-menu__title" itemprop="jobTitle">Мастер маникюра</p>
             <meta itemprop="telephone" content="+79999999999">
@@ -183,17 +187,17 @@
       <div class="gallery">
         <!-- Подробные alt для SEO/Accessibility -->
         <div class="gallery__item"><img class="gallery__image" src="./images/nail-02.webp"
-            alt="Пример маникюра: нежный френч с розовым покрытием" loading="lazy"></div>
+            alt="Пример маникюра: нежный френч с розовым покрытием" loading="lazy" width="800" height="600"></div>
         <div class="gallery__item"><img class="gallery__image" src="./images/nail-03.webp"
-            alt="Пример маникюра: матовый дизайн с блестками" loading="lazy"></div>
+            alt="Пример маникюра: матовый дизайн с блестками" loading="lazy" width="800" height="600"></div>
         <div class="gallery__item"><img class="gallery__image" src="./images/nail-04.webp"
-            alt="Пример маникюра: красный гель-лак, глянцевый финиш" loading="lazy"></div>
+            alt="Пример маникюра: красный гель-лак, глянцевый финиш" loading="lazy" width="800" height="600"></div>
         <div class="gallery__item"><img class="gallery__image" src="./images/nail-05.webp"
-            alt="Пример маникюра: дизайн с геометрическими линиями" loading="lazy"></div>
+            alt="Пример маникюра: дизайн с геометрическими линиями" loading="lazy" width="800" height="600"></div>
         <div class="gallery__item"><img class="gallery__image" src="./images/nail-06.webp"
-            alt="Пример маникюра: нюдовое покрытие и кошачий глаз" loading="lazy"></div>
+            alt="Пример маникюра: нюдовое покрытие и кошачий глаз" loading="lazy" width="800" height="600"></div>
         <div class="gallery__item"><img class="gallery__image" src="./images/nail-01.webp"
-            alt="Пример маникюра: однотонное фиолетовое покрытие" loading="lazy"></div>
+            alt="Пример маникюра: однотонное фиолетовое покрытие" loading="lazy" width="800" height="600"></div>
       </div>
     </section>
 
@@ -201,14 +205,14 @@
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Увеличенное изображение"
       aria-hidden="true">
       <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">✕</button>
-      <!-- img создаётся динамически -->
+      <img class="lightbox__image" id="lightbox-img" alt="" width="800" height="600">
     </div>
 
     <!-- ABOUT (Микроразметка) -->
     <section id="about" class="about-section container" itemscope itemtype="https://schema.org/Person">
-      <img class="about-section__image" src="./images/tatiana.webp" alt="Татьяна, мастер маникюра" itemprop="image">
+      <img class="about-section__image" src="./images/tatiana.webp" alt="Татьяна, мастер маникюра" itemprop="image" width="400" height="400">
       <div class="about-section__content">
-        <h2 class="section-title about-section__title">Татьяна <span itemprop="name">Эксперт нейл-индустрии</span></h2>
+        <h2 class="section-title about-section__title">Татьяна<br><span itemprop="name">Эксперт&nbsp;  нейл-индустрии</span></h2>
         <p class="about-section__text" itemprop="description">Я — Татьяна, мастер маникюра с более чем 10-летним опытом.
           Обучалась в лучших школах nail-индустрии и постоянно повышаю квалификацию.</p>
         <p class="about-section__text">Моя цель — чтобы вы выходили не просто с маникюром, а с уверенностью в себе.</p>
@@ -221,7 +225,7 @@
       <div class="review-list">
         <div class="review-card" itemscope itemtype="https://schema.org/Review">
           <div class="review-card__header">
-            <img class="review-card__avatar" src="./images/comment-01.webp" alt="Аватар Анны">
+            <img class="review-card__avatar" src="./images/comment-01.webp" alt="Аватар Анны" width="80" height="80">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Анна</b>
               <div class="review-card__stars">★★★★★</div>
@@ -234,7 +238,7 @@
 
         <div class="review-card" itemscope itemtype="https://schema.org/Review">
           <div class="review-card__header">
-            <img class="review-card__avatar" src="./images/comment-02.webp" alt="Аватар Марии">
+            <img class="review-card__avatar" src="./images/comment-02.webp" alt="Аватар Марии" width="80" height="80">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Мария</b>
               <div class="review-card__stars">★★★★★</div>
@@ -247,7 +251,7 @@
 
         <div class="review-card" itemscope itemtype="https://schema.org/Review">
           <div class="review-card__header">
-            <img class="review-card__avatar" src="./images/comment-03.webp" alt="Аватар Екатерины">
+            <img class="review-card__avatar" src="./images/comment-03.webp" alt="Аватар Екатерины" width="80" height="80">
             <div class="review-card__author">
               <b class="review-card__name" itemprop="author">Екатерина</b>
               <div class="review-card__stars">★★★★★</div>
@@ -262,7 +266,7 @@
 
     <!-- FORM (Accessible) -->
     <section id="form" class="form-section container">
-      <h2 class="section-title">Записаться на прием</h2>
+      <h2 class="section-title">Записаться</h2>
       <form id="formEl" class="appointment-form" action="#" method="POST">
         <div class="appointment-form__group">
           <input class="appointment-form__input" type="text" id="name" name="name" required>
