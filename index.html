@@ -4,7 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Маникюр Татьяны | Идеальные ногти</title>
+
+  <!-- SEO метатеги -->
+  <meta name="description"
+    content="Маникюр от Татьяны. Более 10 лет опыта, стерильные инструменты, стойкое покрытие до 4 недель. Запись онлайн.">
+  <meta name="keywords" content="маникюр, гель-лак, наращивание, мастер маникюра, Татьяна, ногти, стерильный маникюр">
+  <meta name="author" content="Татьяна">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://asyalapa.github.io/nails-landing/">
+
+  <title>Татьяна | Мастер маникюра и педикюра. Студия “Ноготки принцессы”</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="./images/manicure-svgrepo-com.svg" type="image/svg+xml">
 
@@ -14,20 +23,23 @@
 
 <body class="page">
 
-  <!-- COOKIE -->
-  <div class="cookie" id="cookie">
-    <p class="cookie__text">Мы используем cookies для улучшения работы сайта</p>
-    <button class="cookie__button">Ок</button>
+  <!-- COOKIE (GDPR Ready) -->
+  <div class="cookie" id="cookie" role="alert" aria-label="Уведомление о cookies">
+    <p class="cookie__text">Мы используем cookies для улучшения работы сайта. Продолжая использовать сайт, вы
+      соглашаетесь с этим.</p>
+    <div class="cookie__buttons">
+      <button class="cookie__button" id="acceptCookies">Принять</button>
+      <button class="cookie__button cookie__button--secondary" id="declineCookies">Отказаться</button>
+    </div>
   </div>
 
   <!-- HEADER -->
-  <!-- HEADER -->
   <header class="header">
     <div class="container header__container">
-      <div class="header__logo">Ноготки принцессы</div>
+      <div class="header__logo" aria-label="Ноготки принцессы, студия маникюра">Ноготки принцессы</div>
 
-      <!-- НАВИГАЦИЯ ДЛЯ ДЕСКТОПА -->
-      <nav class="header__nav nav">
+      <!-- ДЕСКТОПНАЯ НАВИГАЦИЯ -->
+      <nav class="header__nav nav" aria-label="Основное меню">
         <a class="nav__link" href="#services">Услуги</a>
         <a class="nav__link" href="#portfolio">Работы</a>
         <a class="nav__link" href="#about">О мастере</a>
@@ -36,26 +48,32 @@
       </nav>
 
       <div class="header__actions">
-        <button class="theme-toggle header__theme-toggle" id="themeToggle">
-          <span class="material-symbols-outlined theme-toggle__icon" id="themeIcon">dark_mode</span>
+        <button class="theme-toggle header__theme-toggle" id="themeToggle"
+          aria-label="Переключить тему (светлая/темная)">
+          <span class="material-symbols-outlined theme-toggle__icon" id="themeIcon" aria-hidden="true">dark_mode</span>
         </button>
-        <button class="burger header__burger" id="burger">
-          <span class="burger__line"></span>
-          <span class="burger__line"></span>
-          <span class="burger__line"></span>
+        <button class="burger header__burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line" aria-hidden="true"></span>
+          <span class="burger__line" aria-hidden="true"></span>
+          <span class="burger__line" aria-hidden="true"></span>
         </button>
       </div>
     </div>
 
-    <!-- МОБИЛЬНОЕ МЕНЮ (FULLSCREEN) -->
-    <div class="mobile-menu" id="mobileMenu">
+    <!-- МОБИЛЬНОЕ МЕНЮ -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
       <div class="mobile-menu__container">
         <div class="mobile-menu__profile">
-          <img src="./images/tatiana.png" alt="Татьяна" class="mobile-menu__avatar">
-          <p class="mobile-menu__name">Татьяна</p>
-          <p class="mobile-menu__title">Мастер маникюра</p>
+          <!-- Schema.org разметка для мастера -->
+          <div itemscope itemtype="https://schema.org/Person">
+            <img src="./images/tatiana.png" alt="Фотография Татьяны, мастера маникюра" class="mobile-menu__avatar"
+              itemprop="image">
+            <p class="mobile-menu__name" itemprop="name">Татьяна</p>
+            <p class="mobile-menu__title" itemprop="jobTitle">Мастер маникюра</p>
+            <meta itemprop="telephone" content="+79999999999">
+          </div>
         </div>
-        <nav class="mobile-menu__nav">
+        <nav class="mobile-menu__nav" aria-label="Мобильное меню">
           <a class="mobile-menu__link" href="#services">Услуги</a>
           <a class="mobile-menu__link" href="#portfolio">Работы</a>
           <a class="mobile-menu__link" href="#about">О мастере</a>
@@ -64,9 +82,9 @@
         </nav>
         <div class="mobile-menu__footer">
           <div class="mobile-menu__social">
-            <a href="#" class="mobile-menu__social-link">Telegram</a>
-            <a href="#" class="mobile-menu__social-link">WhatsApp</a>
-            <a href="#" class="mobile-menu__social-link">Instagram</a>
+            <a href="#" class="mobile-menu__social-link" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="#" class="mobile-menu__social-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="#" class="mobile-menu__social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
           <p class="mobile-menu__contact">📞 +7 999 999 99 99</p>
         </div>
@@ -74,229 +92,234 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__container container">
-      <h1 class="hero__title">Маникюр, который собирает комплименты</h1>
-      <p class="hero__subtitle">Аккуратно, стерильно и с любовью к каждой детали</p>
-      <a href="#form" class="button hero__button">Записаться</a>
-    </div>
-  </section>
-
-  <!-- ADVANTAGES -->
-  <section class="advantage-list container">
-    <div class="advantage-card">
-      <h3 class="advantage-card__title">10+ лет опыта</h3>
-      <p class="advantage-card__text">Работаю с любыми типами ногтей</p>
-    </div>
-    <div class="advantage-card">
-      <h3 class="advantage-card__title">Стерильность 100%</h3>
-      <p class="advantage-card__text">Все инструменты проходят обработку</p>
-    </div>
-    <div class="advantage-card">
-      <h3 class="advantage-card__title">Держится до 4 недель</h3>
-      <p class="advantage-card__text">Без сколов и отслоек</p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="services-section container">
-    <h2 class="section-title">Услуги и цены</h2>
-
-    <div class="service-list">
-      <div class="service-card">
-        <div class="service-card__info">
-          <h3 class="service-card__title">Классический маникюр</h3>
-          <p class="service-card__description">Уход, обработка и идеальная форма</p>
-        </div>
-        <div class="service-card__aside">
-          <span class="service-card__price">1500 ₽</span>
-          <button class="button service-card__button">Записаться</button>
-        </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__container container">
+        <h1 class="hero__title">Маникюр, который собирает комплименты</h1>
+        <p class="hero__subtitle">Аккуратно, стерильно и с любовью к каждой детали</p>
+        <a href="#form" class="button hero__button">Записаться онлайн</a>
       </div>
+    </section>
 
-      <div class="service-card">
-        <div class="service-card__info">
-          <h3 class="service-card__title">Гель-лак</h3>
-          <p class="service-card__description">Стойкое покрытие до 4 недель</p>
-        </div>
-        <div class="service-card__aside">
-          <span class="service-card__price">2200 ₽</span>
-          <button class="button service-card__button">Записаться</button>
-        </div>
+    <!-- ADVANTAGES -->
+    <section class="advantage-list container" aria-label="Преимущества">
+      <div class="advantage-card">
+        <h3 class="advantage-card__title">10+ лет опыта</h3>
+        <p class="advantage-card__text">Работаю с любыми типами ногтей</p>
       </div>
-
-      <div class="service-card">
-        <div class="service-card__info">
-          <h3 class="service-card__title">Наращивание</h3>
-          <p class="service-card__description">Идеальная длина и архитектура</p>
-        </div>
-        <div class="service-card__aside">
-          <span class="service-card__price">3500 ₽</span>
-          <button class="button service-card__button">Записаться</button>
-        </div>
+      <div class="advantage-card">
+        <h3 class="advantage-card__title">Стерильность 100%</h3>
+        <p class="advantage-card__text">Все инструменты проходят обработку</p>
       </div>
-    </div>
-
-    <div class="promo-banner">
-      <span class="promo-banner__badge">🎁 Специальное предложение</span>
-      <p class="promo-banner__text">На каждый третий маникюр — скидка 5%</p>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="portfolio-section container">
-    <h2 class="section-title">Мои работы</h2>
-
-    <div class="gallery">
-      <div class="gallery__item">
-        <img class="gallery__image" src="./images/nail-02.png" alt="Маникюр">
+      <div class="advantage-card">
+        <h3 class="advantage-card__title">Держится до 4 недель</h3>
+        <p class="advantage-card__text">Без сколов и отслоек</p>
       </div>
-      <div class="gallery__item">
-        <img class="gallery__image" src="./images/nail-03.png" alt="Маникюр">
-      </div>
-      <div class="gallery__item">
-        <img class="gallery__image" src="./images/nail-04.png" alt="Маникюр">
-      </div>
-      <div class="gallery__item">
-        <img class="gallery__image" src="./images/nail-05.png" alt="Маникюр">
-      </div>
-      <div class="gallery__item">
-        <img class="gallery__image" src="./images/nail-06.png" alt="Маникюр">
-      </div>
-      <div class="gallery__item">
-        <img class="gallery__image" src="./images/nail-01.png" alt="Маникюр">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <img class="lightbox__image" id="lightbox-img">
-  </div>
+    <!-- SERVICES (С микроразметкой) -->
+    <section id="services" class="services-section container" itemscope itemtype="https://schema.org/OfferCatalog">
+      <h2 class="section-title">Услуги и цены</h2>
 
-  <!-- ABOUT -->
-  <section id="about" class="about-section container">
-    <img class="about-section__image" src="./images/tatiana.png" alt="О мастере">
-    <div class="about-section__content">
-      <h2 class="section-title about-section__title">О мастере</h2>
-      <p class="about-section__text">Я — Татьяна, мастер маникюра с более чем 10-летним опытом. Обучалась в лучших
-        школах nail-индустрии и постоянно повышаю квалификацию.</p>
-      <p class="about-section__text">Моя цель — чтобы вы выходили не просто с маникюром, а с уверенностью в себе.</p>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section id="reviews" class="reviews-section container">
-    <h2 class="section-title">Отзывы</h2>
-
-    <div class="review-list">
-      <div class="review-card">
-        <div class="review-card__header">
-          <img class="review-card__avatar" src="./images/comment-01.png" alt="Анна">
-          <div class="review-card__author">
-            <b class="review-card__name">Анна</b>
-            <div class="review-card__stars">★★★★★</div>
+      <div class="service-list">
+        <div class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+          <div class="service-card__info">
+            <h3 class="service-card__title" itemprop="name">Классический маникюр</h3>
+            <p class="service-card__description" itemprop="description">Уход, обработка и идеальная форма</p>
+          </div>
+          <div class="service-card__aside">
+            <span class="service-card__price" itemprop="price">1500 ₽</span>
+            <meta itemprop="priceCurrency" content="RUB">
+            <button class="button service-card__button"
+              aria-label="Записаться на классический маникюр">Записаться</button>
           </div>
         </div>
-        <p class="review-card__text">Лучший мастер! Маникюр держится идеально уже больше 3 недель. Очень аккуратно и
-          красиво 💅</p>
-      </div>
 
-      <div class="review-card">
-        <div class="review-card__header">
-          <img class="review-card__avatar" src="./images/comment-02.png" alt="Мария">
-          <div class="review-card__author">
-            <b class="review-card__name">Мария</b>
-            <div class="review-card__stars">★★★★★</div>
+        <div class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+          <div class="service-card__info">
+            <h3 class="service-card__title" itemprop="name">Гель-лак</h3>
+            <p class="service-card__description" itemprop="description">Стойкое покрытие до 4 недель</p>
+          </div>
+          <div class="service-card__aside">
+            <span class="service-card__price" itemprop="price">2200 ₽</span>
+            <meta itemprop="priceCurrency" content="RUB">
+            <button class="button service-card__button" aria-label="Записаться на гель-лак">Записаться</button>
           </div>
         </div>
-        <p class="review-card__text">Всегда уютная атмосфера и внимание к деталям. Хожу только к Татьяне ❤️</p>
-      </div>
 
-      <div class="review-card">
-        <div class="review-card__header">
-          <img class="review-card__avatar" src="./images/comment-03.png" alt="Екатерина">
-          <div class="review-card__author">
-            <b class="review-card__name">Екатерина</b>
-            <div class="review-card__stars">★★★★★</div>
+        <div class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+          <div class="service-card__info">
+            <h3 class="service-card__title" itemprop="name">Наращивание</h3>
+            <p class="service-card__description" itemprop="description">Идеальная длина и архитектура</p>
+          </div>
+          <div class="service-card__aside">
+            <span class="service-card__price" itemprop="price">3500 ₽</span>
+            <meta itemprop="priceCurrency" content="RUB">
+            <button class="button service-card__button" aria-label="Записаться на наращивание">Записаться</button>
           </div>
         </div>
-        <p class="review-card__text">Долго искала “своего” мастера и наконец нашла. Всё идеально — форма, покрытие,
-          сервис 🔥</p>
       </div>
+
+      <div class="promo-banner" role="note">
+        <span class="promo-banner__badge">🎁 Специальное предложение</span>
+        <p class="promo-banner__text">На каждый третий маникюр — скидка 5%</p>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio-section container">
+      <h2 class="section-title">Мои работы</h2>
+      <div class="gallery">
+        <!-- Подробные alt для SEO/Accessibility -->
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-02.png"
+            alt="Пример маникюра: нежный френч с розовым покрытием" loading="lazy"></div>
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-03.png"
+            alt="Пример маникюра: матовый дизайн с блестками" loading="lazy"></div>
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-04.png"
+            alt="Пример маникюра: красный гель-лак, глянцевый финиш" loading="lazy"></div>
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-05.png"
+            alt="Пример маникюра: дизайн с геометрическими линиями" loading="lazy"></div>
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-06.png"
+            alt="Пример маникюра: нюдовое покрытие и кошачий глаз" loading="lazy"></div>
+        <div class="gallery__item"><img class="gallery__image" src="./images/nail-01.png"
+            alt="Пример маникюра: однотонное фиолетовое покрытие" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX (Accessible) -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Увеличенное изображение"
+      aria-hidden="true">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">✕</button>
+      <img class="lightbox__image" id="lightbox-img" alt="">
     </div>
-  </section>
 
-  <!-- FORM -->
-  <section id="form" class="form-section container">
-    <h2 class="section-title">Записаться</h2>
-
-    <form id="formEl" class="appointment-form">
-      <div class="appointment-form__group">
-        <input class="appointment-form__input" type="text" id="name" required>
-        <label class="appointment-form__label" for="name">Ваше имя</label>
+    <!-- ABOUT (Микроразметка) -->
+    <section id="about" class="about-section container" itemscope itemtype="https://schema.org/Person">
+      <img class="about-section__image" src="./images/tatiana.png" alt="Татьяна, мастер маникюра" itemprop="image">
+      <div class="about-section__content">
+        <h2 class="section-title about-section__title">Татьяна <span itemprop="name">Эксперт нейл-индустрии</span></h2>
+        <p class="about-section__text" itemprop="description">Я — Татьяна, мастер маникюра с более чем 10-летним опытом.
+          Обучалась в лучших школах nail-индустрии и постоянно повышаю квалификацию.</p>
+        <p class="about-section__text">Моя цель — чтобы вы выходили не просто с маникюром, а с уверенностью в себе.</p>
       </div>
+    </section>
 
-      <div class="appointment-form__group">
-        <input class="appointment-form__input" type="tel" id="phone" required maxlength="18">
-        <label class="appointment-form__label" for="phone">Телефон</label>
-      </div>
+    <!-- REVIEWS (Микроразметка) -->
+    <section id="reviews" class="reviews-section container">
+      <h2 class="section-title">Отзывы</h2>
+      <div class="review-list">
+        <div class="review-card" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card__header">
+            <img class="review-card__avatar" src="./images/comment-01.png" alt="Аватар Анны">
+            <div class="review-card__author">
+              <b class="review-card__name" itemprop="author">Анна</b>
+              <div class="review-card__stars" aria-label="5 из 5 звезд">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text" itemprop="reviewBody">Лучший мастер! Маникюр держится идеально уже больше 3
+            недель. Очень аккуратно и красиво 💅</p>
+          <meta itemprop="ratingValue" content="5">
+        </div>
 
-      <div class="appointment-form__group appointment-form__group--select">
-        <select class="appointment-form__select" id="service" required>
-          <option value="" disabled selected></option>
-          <option>Классический маникюр</option>
-          <option>Гель-лак</option>
-          <option>Наращивание</option>
-        </select>
-      </div>
+        <div class="review-card" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card__header">
+            <img class="review-card__avatar" src="./images/comment-02.png" alt="Аватар Марии">
+            <div class="review-card__author">
+              <b class="review-card__name" itemprop="author">Мария</b>
+              <div class="review-card__stars" aria-label="5 из 5 звезд">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text" itemprop="reviewBody">Всегда уютная атмосфера и внимание к деталям. Хожу только к
+            Татьяне ❤️</p>
+          <meta itemprop="ratingValue" content="5">
+        </div>
 
-      <button class="button appointment-form__button">Записаться</button>
-    </form>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section container">
-    <h2 class="section-title">Вопросы</h2>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-item__question">Сколько держится маникюр?</div>
-        <div class="faq-item__answer">До 4 недель</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-item__question">Стерильны ли инструменты?</div>
-        <div class="faq-item__answer">Да, полная обработка</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTS -->
-  <section id="contacts" class="contacts-section container">
-    <h2 class="section-title">Контакты</h2>
-
-    <div class="contacts-grid">
-      <div class="contacts-info">
-        <h3 class="contacts-info__title">Студия «Ноготки принцессы»</h3>
-        <p class="contacts-info__item">📞 <a class="contacts-info__link" href="tel:+79999999999">+7 999 999 99 99</a>
-        </p>
-        <p class="contacts-info__item">✉️ <a class="contacts-info__link" href="mailto:info@nails.ru">info@nails.ru</a>
-        </p>
-        <div class="social-links">
-          <a class="social-links__item" href="#">Telegram</a>
-          <a class="social-links__item" href="#">WhatsApp</a>
-          <a class="social-links__item" href="#">Instagram</a>
+        <div class="review-card" itemscope itemtype="https://schema.org/Review">
+          <div class="review-card__header">
+            <img class="review-card__avatar" src="./images/comment-03.png" alt="Аватар Екатерины">
+            <div class="review-card__author">
+              <b class="review-card__name" itemprop="author">Екатерина</b>
+              <div class="review-card__stars" aria-label="5 из 5 звезд">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text" itemprop="reviewBody">Долго искала “своего” мастера и наконец нашла. Всё идеально
+            — форма, покрытие, сервис 🔥</p>
+          <meta itemprop="ratingValue" content="5">
         </div>
       </div>
+    </section>
 
-      <div class="contacts-map">
-        <iframe class="contacts-map__iframe"
-          src="https://maps.google.com/maps?q=Moscow&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    <!-- FORM (Accessible) -->
+    <section id="form" class="form-section container">
+      <h2 class="section-title">Записаться на прием</h2>
+      <form id="formEl" class="appointment-form" action="#" method="POST">
+        <div class="appointment-form__group">
+          <input class="appointment-form__input" type="text" id="name" name="name" required aria-required="true">
+          <label class="appointment-form__label" for="name">Ваше имя</label>
+        </div>
+
+        <div class="appointment-form__group">
+          <input class="appointment-form__input" type="tel" id="phone" name="phone" required maxlength="18"
+            aria-required="true">
+          <label class="appointment-form__label" for="phone">Телефон</label>
+        </div>
+
+        <div class="appointment-form__group">
+          <select class="appointment-form__select" id="service" name="service" required aria-required="true">
+            <option value="" disabled selected>Выберите услугу</option>
+            <option>Классический маникюр</option>
+            <option>Гель-лак</option>
+            <option>Наращивание</option>
+          </select>
+        </div>
+
+        <button type="submit" class="button appointment-form__button">Отправить заявку</button>
+      </form>
+    </section>
+
+    <!-- FAQ (Structure Data) -->
+    <section class="faq-section container" itemscope itemtype="https://schema.org/FAQPage">
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <div class="faq-list">
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-item__question" itemprop="name">Сколько держится маникюр?</div>
+          <div class="faq-item__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">Покрытие держится до 4 недель без сколов при правильном уходе.</div>
+          </div>
+        </div>
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="faq-item__question" itemprop="name">Стерильны ли инструменты?</div>
+          <div class="faq-item__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div itemprop="text">Да, проводится полная многоступенчатая обработка и стерилизация.</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- CONTACTS -->
+    <section id="contacts" class="contacts-section container">
+      <h2 class="section-title">Контакты</h2>
+      <div class="contacts-grid">
+        <div class="contacts-info">
+          <h3 class="contacts-info__title">Студия «Ноготки принцессы»</h3>
+          <p class="contacts-info__item">📞 <a class="contacts-info__link" href="tel:+79999999999"
+              aria-label="Позвонить по номеру +7 999 999 99 99">+7 999 999 99 99</a></p>
+          <p class="contacts-info__item">✉️ <a class="contacts-info__link" href="mailto:info@nails.ru"
+              aria-label="Написать письмо">info@nails.ru</a></p>
+          <div class="social-links" aria-label="Социальные сети">
+            <a class="social-links__item" href="#" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a class="social-links__item" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="social-links__item" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+        <div class="contacts-map">
+          <iframe class="contacts-map__iframe" title="Карта проезда к студии в Москве"
+            src="https://maps.google.com/maps?q=Moscow&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -305,29 +328,30 @@
         <div class="footer__copyright">
           <div class="footer__author">
             <p class="footer__author-name">
-              Разработка: <a href="https://t.me/Asyalapa" target="_blank" rel="noopener noreferrer">@Asyalapa</a>
-              <span class="footer__author-divider">|</span>
-              Анастасия М
+              Разработка: <a href="https://t.me/Asyalapa" target="_blank"
+                rel="noopener noreferrer nofollow">@Asyalapa</a>
+              <span class="footer__author-divider">|</span> Анастасия М
             </p>
             <p class="footer__author-badge">💻 Веб-разработчик</p>
           </div>
-          <p class="footer__disclaimer">
-            ⚡ Демонстрационный проект • Апрель 2026
-          </p>
+          <p class="footer__disclaimer">⚡ Демонстрационный проект • Апрель 2026</p>
         </div>
         <div class="footer__legal">
           <p class="footer__p">© 2026 Tatiana Nails</p>
-          <button class="footer__policy-button" onclick="openPolicy()">Политика конфиденциальности</button>
+          <button class="footer__policy-button" id="openPolicyBtn" aria-haspopup="dialog">Политика
+            конфиденциальности</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- POLICY MODAL -->
-  <div class="modal" id="policy">
+  <!-- POLICY MODAL (Accessible) -->
+  <div class="modal" id="policy" role="dialog" aria-modal="true" aria-labelledby="policyTitle" aria-hidden="true">
     <div class="modal__content">
-      <p class="modal__text">Мы собираем данные (имя, телефон, cookies) исключительно для связи с клиентом.</p>
-      <button class="modal__close-button" onclick="closePolicy()">Закрыть</button>
+      <h3 id="policyTitle" class="visually-hidden">Политика конфиденциальности</h3>
+      <p class="modal__text">Мы собираем данные (имя, телефон, cookies) исключительно для связи с клиентом. Данные не
+        передаются третьим лицам.</p>
+      <button class="modal__close-button" id="closePolicyBtn">Закрыть</button>
     </div>
   </div>
 
