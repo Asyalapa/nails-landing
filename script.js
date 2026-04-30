@@ -126,6 +126,7 @@ const MobileMenuManager = (() => {
     menu.classList.toggle('active');
     document.body.classList.toggle('menu-open');
     burger.setAttribute('aria-expanded', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
   };
 
   /**
