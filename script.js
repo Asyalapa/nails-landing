@@ -313,9 +313,9 @@ const CookieManager = (() => {
       declineBtn.addEventListener('click', declineCookies);
     }
 
-    // Скрываем баннер если уже было решение
+    // Скрываем баннер только если пользователь явно принял cookies
     const cookiesAccepted = localStorage.getItem(COOKIE_KEY);
-    if (cookiesAccepted === 'true' || cookiesAccepted === 'false') {
+    if (cookiesAccepted === 'true') {
       hideCookieNotice();
     }
   };
