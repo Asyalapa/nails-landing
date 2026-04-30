@@ -333,9 +333,8 @@ const CookieManager = (() => {
    * Отклоняет cookies и скрывает баннер
    */
   const declineCookies = () => {
-    localStorage.setItem(COOKIE_KEY, 'false');
+    // Не сохраняем отказ — баннер покажется снова при следующем визите
     hideCookieNotice();
-    // Здесь можно отключить неважные скрипты/трекеры
   };
 
   /**
